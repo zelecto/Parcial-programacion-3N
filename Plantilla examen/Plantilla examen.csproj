@@ -46,25 +46,37 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="menuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="menuPrincipal.Designer.cs">
+      <DependentUpon>menuPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="plantilla.cs">
+    <Compile Include="REGISTRAR.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="plantilla.Designer.cs">
-      <DependentUpon>plantilla.cs</DependentUpon>
+    <Compile Include="REGISTRAR.Designer.cs">
+      <DependentUpon>REGISTRAR.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="VisualizarEmplezamientoySinEmplezamiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisualizarEmplezamientoySinEmplezamiento.Designer.cs">
+      <DependentUpon>VisualizarEmplezamientoySinEmplezamiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="visualizartotaldeclarado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="visualizartotaldeclarado.Designer.cs">
+      <DependentUpon>visualizartotaldeclarado.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="menuPrincipal.resx">
+      <DependentUpon>menuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="plantilla.resx">
-      <DependentUpon>plantilla.cs</DependentUpon>
+    <EmbeddedResource Include="REGISTRAR.resx">
+      <DependentUpon>REGISTRAR.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -75,6 +87,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="VisualizarEmplezamientoySinEmplezamiento.resx">
+      <DependentUpon>VisualizarEmplezamientoySinEmplezamiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="visualizartotaldeclarado.resx">
+      <DependentUpon>visualizartotaldeclarado.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
