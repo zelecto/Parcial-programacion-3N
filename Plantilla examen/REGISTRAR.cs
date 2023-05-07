@@ -57,7 +57,7 @@ namespace Plantilla_examen
             txtNit.Clear();
             txtNombre.Clear();
             txtvalorDeclarado.Clear();
-            txtsalarioMinimo.Clear();
+            lbSalarioMinimo.Text = "";
             rbEmplazamiento.Checked = false;
             rbnoEmplazamiento.Checked = false;
             lbcobroResultado.Text = "";
@@ -82,7 +82,6 @@ namespace Plantilla_examen
                 else
                 {
                     formulario.Sancion= false;
-                    txtsalarioMinimo.Enabled = false;
                 }
                 formulario.Id = servidiosFormulario.GenerarId();
                 lbNumero.Text = formulario.Id.ToString();
@@ -90,11 +89,11 @@ namespace Plantilla_examen
                 formulario.Nombre = txtNombre.Text;
                 formulario.Fecha = dtfechaDeclaracion.Value;
                 formulario.ValorDeclarado = double.Parse(txtvalorDeclarado.Text);
-                formulario.SalarioMinimoActual = double.Parse(txtsalarioMinimo.Text);
+                formulario.SalarioMinimoActual =formulario.CalcularSalarioMinimo();
                 formulario.Cobro=formulario.CalcularCobro();
                 lbcobroResultado.Text=formulario.Cobro.ToString();
                 servidiosFormulario.Add(formulario);
-                
+                lbSalarioMinimo.Text = formulario.SalarioMinimoActual.ToString();
                 MessageBox.Show("Se Guardo Correctamente");
                 limpiardato();
 
@@ -164,14 +163,6 @@ namespace Plantilla_examen
             dtviewRegistra.Refresh();
         }
 
-        private void rbEmplazamiento_Click(object sender, EventArgs e)
-        {
-            txtsalarioMinimo.Enabled = false;
-        }
-
-        private void rbnoEmplazamiento_Click(object sender, EventArgs e)
-        {
-            txtsalarioMinimo.Enabled = true;
-        }
+       
     }
 }

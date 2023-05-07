@@ -64,5 +64,7 @@ namespace Plantilla_examen
             lbcobroemplazamiento.Text = servidiosFormulario.CobroAllEmplazamiento().ToString();
             lbcobrosinemplazamiento.Text = servidiosFormulario.CobroAllSinEmplazamiento().ToString();
         }
+
+        
     }
 }

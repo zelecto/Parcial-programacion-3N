@@ -10,12 +10,8 @@ namespace Entidades
     public class Formulario
     {
         public Formulario()
-        {
-            Fecha = DateTime.Now;
-            Sancion = ValidarSancion();            
+        {         
         }
-
-       
 
         public int Id { get; set; }
         public long Cedula { get; set; }
@@ -27,25 +23,24 @@ namespace Entidades
         public double Cobro { get; set; }
         
 
-        public bool ValidarSancion()
-        {
-            if (Fecha.Day>10)
-            {
-                return true;
-            }
-            return false;
-        }
-
         public double CalcularCobro()
         {
+            int diaExponalidad=Fecha.Day-DateTime.Now.Day;
+            if (diaExponalidad < 0)
+            {
+                diaExponalidad = -1 * diaExponalidad;
+            }
             if (Sancion)
             {
-                return ValorDeclarado * Fecha.Day * 0.3;
+                return ValorDeclarado * diaExponalidad * 0.3;
             }
-            return ValorDeclarado * Fecha.Day * (SalarioMinimoActual*4);
+            return ValorDeclarado * diaExponalidad * (SalarioMinimoActual*4);
         }
-        //Esta funcion determina el valor por 4 del salario minimo leagal vigente
-        
+        public double CalcularSalarioMinimo()
+        {
+            return 1160000 / DateTime.DaysInMonth(Fecha.Year, Fecha.Month); 
+        }
+
         public override string ToString()
         {
             return $"{Id};{Cedula};{Nombre};{Fecha};{Sancion};{ValorDeclarado};{Cobro};{SalarioMinimoActual}";
