@@ -20,6 +20,8 @@ namespace Plantilla_examen
         public REGISTRAR()
         {
             InitializeComponent();
+            dtfechaDeclaracion.Enabled = false;
+            lbNumero.Text = servidiosFormulario.GenerarId().ToString();   
         }
         ServidiosFormulario servidiosFormulario = new ServidiosFormulario();
         private void cerrar()
@@ -67,19 +69,19 @@ namespace Plantilla_examen
                 formulario.Nombre = txtNombre.Text;
                 formulario.Fecha = dtfechaDeclaracion.Value;
                 formulario.ValorDeclarado = double.Parse(txtvalorDeclarado.Text);
+                formulario.SalarioMinimoActual = double.Parse(txtsalarioMinimo.Text);
                 formulario.Cobro=formulario.CalcularCobro();
                 lbcobroResultado.Text=formulario.Cobro.ToString();
                 servidiosFormulario.Add(formulario);
+                
                 MessageBox.Show("Se Guardo Correctamente");
-                MessageBox.Show("Se Guardo Correctamente");
-
-
 
             }
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             GUARDAR();
+            ActualizarGrilla();
         }
 
         private void txtNit_KeyPress(object sender, KeyPressEventArgs e)
@@ -120,7 +122,23 @@ namespace Plantilla_examen
 
         void cargarGrilla2() 
         {
-            
+            dtviewRegistra.DataSource = servidiosFormulario.GetAll();
+        }
+
+        private void REGISTRAR_Load(object sender, EventArgs e)
+        {
+            cargarGrilla2();
+        }
+        void ActualizarGrilla()
+        {
+            // Cargar los datos actualizados
+            var formulario = servidiosFormulario.GetAll();
+
+            // Establecer los datos de la grilla
+            dtviewRegistra.DataSource = formulario;
+
+            // Refrescar la grilla
+            dtviewRegistra.Refresh();
         }
     }
 }

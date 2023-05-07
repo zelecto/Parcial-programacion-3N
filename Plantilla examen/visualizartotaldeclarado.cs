@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Logica;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,7 @@ namespace Plantilla_examen
         {
             InitializeComponent();
         }
+        ServidiosFormulario servidiosFormulario = new ServidiosFormulario();
         private void cerrar()
         {
             this.Close();
@@ -47,6 +49,19 @@ namespace Plantilla_examen
             {
                 e.Cancel = true;
             }
+        }
+
+        void cargartotaltodo()
+        {
+            dtviewtodo.DataSource = servidiosFormulario.GetAll();
+        }
+
+        private void visualizartotaldeclarado_Load(object sender, EventArgs e)
+        {
+            cargartotaltodo();
+            lbcobroconemplazamiento.Text = servidiosFormulario.CobroAllEmplazamiento().ToString();
+            lbcobrosinemplazamiento.Text = servidiosFormulario.CobroAllSinEmplazamiento().ToString();
+
         }
     }
 }

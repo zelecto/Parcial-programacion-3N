@@ -234,6 +234,7 @@
             this.Name = "REGISTRAR";
             this.Text = "REGISTRAR";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.REGISTRAR_FormClosing);
+            this.Load += new System.EventHandler(this.REGISTRAR_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtviewRegistra)).EndInit();
