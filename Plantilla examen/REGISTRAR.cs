@@ -73,6 +73,8 @@ namespace Plantilla_examen
                 MessageBox.Show("Se Guardo Correctamente");
                 MessageBox.Show("Se Guardo Correctamente");
 
+
+
             }
         }
         private void btnGuardar_Click(object sender, EventArgs e)
