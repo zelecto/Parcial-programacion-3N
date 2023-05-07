@@ -51,17 +51,39 @@ namespace Plantilla_examen
                 e.Cancel = true;
             }
         }
+        void limpiardato() 
+        {
+            lbNumero.Text = "";
+            txtNit.Clear();
+            txtNombre.Clear();
+            txtvalorDeclarado.Clear();
+            txtsalarioMinimo.Clear();
+            rbEmplazamiento.Checked = false;
+            rbnoEmplazamiento.Checked = false;
+            lbcobroResultado.Text = "";
+            dtfechaDeclaracion.Value = DateTime.Now;
 
+        }
         void GUARDAR() 
         {
             Formulario formulario = new Formulario();
+            
             if (string.IsNullOrEmpty(txtNit.Text) || string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtvalorDeclarado.Text))
             {
                 MessageBox.Show("Faltan Datos");
             }
             else 
             {
-
+                if (rbEmplazamiento.Checked)
+                {
+                    formulario.Sancion = true;
+                    
+                }
+                else
+                {
+                    formulario.Sancion= false;
+                    txtsalarioMinimo.Enabled = false;
+                }
                 formulario.Id = servidiosFormulario.GenerarId();
                 lbNumero.Text = formulario.Id.ToString();
                 formulario.Cedula = int.Parse(txtNit.Text);
@@ -74,8 +96,10 @@ namespace Plantilla_examen
                 servidiosFormulario.Add(formulario);
                 
                 MessageBox.Show("Se Guardo Correctamente");
+                limpiardato();
 
             }
+            
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -138,6 +162,16 @@ namespace Plantilla_examen
 
             // Refrescar la grilla
             dtviewRegistra.Refresh();
+        }
+
+        private void rbEmplazamiento_Click(object sender, EventArgs e)
+        {
+            txtsalarioMinimo.Enabled = false;
+        }
+
+        private void rbnoEmplazamiento_Click(object sender, EventArgs e)
+        {
+            txtsalarioMinimo.Enabled = true;
         }
     }
 }
