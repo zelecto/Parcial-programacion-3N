@@ -1,4 +1,5 @@
 ﻿using Entidades;
+using Microsoft.SqlServer.Server;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace Logica
     public interface IFormulario
     {
         bool Add(Formulario formulario);
-        Formulario Search();
+        List<Formulario> Filtrar(bool Emplazamiento);
         List<Formulario> GetAll();
         List<Formulario> GetListaEmplazamiento();
         List<Formulario> GetListaSinEmplazamiento();

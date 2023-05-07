@@ -41,12 +41,23 @@ namespace Logica
 
         public double CobroAllEmplazamiento()
         {
-            throw new NotImplementedException();
+            return CalcularCobroAll(GetListaEmplazamiento());
         }
+        
 
         public double CobroAllSinEmplazamiento()
         {
-            throw new NotImplementedException();
+            return CalcularCobroAll(GetListaSinEmplazamiento());
+        }
+
+        public double CalcularCobroAll(List<Formulario> formularios)
+        {
+            double cobro=0;
+            foreach (var item in formularios)
+            {
+                cobro += item.Cobro;
+            }
+            return cobro;
         }
 
         public List<Formulario> GetAll()
@@ -60,17 +71,25 @@ namespace Logica
 
         public List<Formulario> GetListaEmplazamiento()
         {
-            throw new NotImplementedException();
+            return Filtrar(true);
         }
 
         public List<Formulario> GetListaSinEmplazamiento()
         {
-            throw new NotImplementedException();
+            return Filtrar(false);
         }
 
-        public Formulario Search()
+        public List<Formulario> Filtrar(bool emplazamiento)
         {
-            throw new NotImplementedException();
+            var listaFiltradaFormularios = new List<Formulario>();
+            foreach (var item in archivosFormulario.Consultar())
+            {
+                if (emplazamiento == item.Sancion)
+                {
+                    listaFiltradaFormularios.Add(item);
+                }
+            }
+            return listaFiltradaFormularios;
         }
     }
 }

@@ -69,6 +69,7 @@ namespace Datos
                 formulario.Sancion = bool.Parse(auxi[4]);
                 formulario.ValorDeclarado = double.Parse(auxi[5]);
                 formulario.Cobro = double.Parse(auxi[6]);
+                formulario.SalarioMinimoActual = double.Parse(auxi[7]);
                 return formulario;
             }
             catch (Exception)
