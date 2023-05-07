@@ -16,7 +16,7 @@ namespace Entidades
 
         }
 
-        public Formulario(int id, long cedula, string nombre, DateTime fecha, bool sancion, bool valorDeclarado, double cobro)
+        public Formulario(int id, long cedula, string nombre, DateTime fecha, bool sancion, double valorDeclarado, double cobro)
         {
             Id = id;
             Cedula = cedula;
@@ -53,5 +53,9 @@ namespace Entidades
             return ValorDeclarado * Fecha.Day * 1160000;
         }
 
+        public override string ToString()
+        {
+            return $"{Id};{Cedula};{Nombre};{Fecha};{Sancion};{ValorDeclarado};{Cobro}";
+        }
     }
 }
