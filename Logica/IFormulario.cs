@@ -17,6 +17,7 @@ namespace Logica
         List<Formulario> GetListaSinEmplazamiento();
         double CobroAllEmplazamiento();
         double CobroAllSinEmplazamiento();
-
+        double CalcularCobroAll(List<Formulario> formularios);
+        int GenerarId();
     }
 }
