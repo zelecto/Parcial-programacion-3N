@@ -34,7 +34,7 @@ namespace Entidades
             {
                 return ValorDeclarado * diaExponalidad * 0.3;
             }
-            return ValorDeclarado * diaExponalidad * (SalarioMinimoActual*4);
+            return ValorDeclarado * (SalarioMinimoActual*4);
         }
         public double CalcularSalarioMinimo()
         {
