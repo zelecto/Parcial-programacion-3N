@@ -30,20 +30,22 @@
         {
             this.btnsalirRegistrar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbcobroResultado = new System.Windows.Forms.Label();
+            this.lbcobro = new System.Windows.Forms.Label();
+            this.lbNumero = new System.Windows.Forms.Label();
+            this.lbnumeroFormulario = new System.Windows.Forms.Label();
             this.dtfechaDeclaracion = new System.Windows.Forms.DateTimePicker();
             this.txtvalorDeclarado = new System.Windows.Forms.TextBox();
             this.lbvalorDeclarado = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.lbFecha = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.lbNombre = new System.Windows.Forms.Label();
             this.lbNit = new System.Windows.Forms.Label();
             this.txtNit = new System.Windows.Forms.TextBox();
             this.dtviewRegistra = new System.Windows.Forms.DataGridView();
-            this.lbnumeroFormulario = new System.Windows.Forms.Label();
-            this.lbNumero = new System.Windows.Forms.Label();
-            this.lbcobro = new System.Windows.Forms.Label();
-            this.lbcobroResultado = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtsalarioMinimo = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtviewRegistra)).BeginInit();
             this.SuspendLayout();
@@ -60,6 +62,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txtsalarioMinimo);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.lbcobroResultado);
             this.panel1.Controls.Add(this.lbcobro);
             this.panel1.Controls.Add(this.lbNumero);
@@ -69,7 +73,7 @@
             this.panel1.Controls.Add(this.lbvalorDeclarado);
             this.panel1.Controls.Add(this.btnGuardar);
             this.panel1.Controls.Add(this.lbFecha);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.txtNombre);
             this.panel1.Controls.Add(this.lbNombre);
             this.panel1.Controls.Add(this.lbNit);
             this.panel1.Controls.Add(this.txtNit);
@@ -78,6 +82,42 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(409, 503);
             this.panel1.TabIndex = 1;
+            // 
+            // lbcobroResultado
+            // 
+            this.lbcobroResultado.AutoSize = true;
+            this.lbcobroResultado.Location = new System.Drawing.Point(143, 232);
+            this.lbcobroResultado.Name = "lbcobroResultado";
+            this.lbcobroResultado.Size = new System.Drawing.Size(27, 16);
+            this.lbcobroResultado.TabIndex = 12;
+            this.lbcobroResultado.Text = "NN";
+            // 
+            // lbcobro
+            // 
+            this.lbcobro.AutoSize = true;
+            this.lbcobro.Location = new System.Drawing.Point(34, 232);
+            this.lbcobro.Name = "lbcobro";
+            this.lbcobro.Size = new System.Drawing.Size(44, 16);
+            this.lbcobro.TabIndex = 11;
+            this.lbcobro.Text = "Cobro";
+            // 
+            // lbNumero
+            // 
+            this.lbNumero.AutoSize = true;
+            this.lbNumero.Location = new System.Drawing.Point(222, 25);
+            this.lbNumero.Name = "lbNumero";
+            this.lbNumero.Size = new System.Drawing.Size(27, 16);
+            this.lbNumero.TabIndex = 10;
+            this.lbNumero.Text = "NN";
+            // 
+            // lbnumeroFormulario
+            // 
+            this.lbnumeroFormulario.AutoSize = true;
+            this.lbnumeroFormulario.Location = new System.Drawing.Point(34, 25);
+            this.lbnumeroFormulario.Name = "lbnumeroFormulario";
+            this.lbnumeroFormulario.Size = new System.Drawing.Size(122, 16);
+            this.lbnumeroFormulario.TabIndex = 9;
+            this.lbnumeroFormulario.Text = "Numero Formulario";
             // 
             // dtfechaDeclaracion
             // 
@@ -92,6 +132,7 @@
             this.txtvalorDeclarado.Name = "txtvalorDeclarado";
             this.txtvalorDeclarado.Size = new System.Drawing.Size(166, 22);
             this.txtvalorDeclarado.TabIndex = 7;
+            this.txtvalorDeclarado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtvalorDeclarado_KeyPress);
             // 
             // lbvalorDeclarado
             // 
@@ -110,6 +151,7 @@
             this.btnGuardar.TabIndex = 5;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // lbFecha
             // 
@@ -120,12 +162,13 @@
             this.lbFecha.TabIndex = 5;
             this.lbFecha.Text = "Fecha";
             // 
-            // textBox2
+            // txtNombre
             // 
-            this.textBox2.Location = new System.Drawing.Point(146, 100);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(166, 22);
-            this.textBox2.TabIndex = 3;
+            this.txtNombre.Location = new System.Drawing.Point(146, 100);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(166, 22);
+            this.txtNombre.TabIndex = 3;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // lbNombre
             // 
@@ -151,6 +194,7 @@
             this.txtNit.Name = "txtNit";
             this.txtNit.Size = new System.Drawing.Size(166, 22);
             this.txtNit.TabIndex = 0;
+            this.txtNit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNit_KeyPress);
             // 
             // dtviewRegistra
             // 
@@ -162,41 +206,22 @@
             this.dtviewRegistra.Size = new System.Drawing.Size(487, 254);
             this.dtviewRegistra.TabIndex = 2;
             // 
-            // lbnumeroFormulario
+            // label1
             // 
-            this.lbnumeroFormulario.AutoSize = true;
-            this.lbnumeroFormulario.Location = new System.Drawing.Point(34, 25);
-            this.lbnumeroFormulario.Name = "lbnumeroFormulario";
-            this.lbnumeroFormulario.Size = new System.Drawing.Size(122, 16);
-            this.lbnumeroFormulario.TabIndex = 9;
-            this.lbnumeroFormulario.Text = "Numero Formulario";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(34, 204);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(93, 16);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "SalarioMinimo";
             // 
-            // lbNumero
+            // txtsalarioMinimo
             // 
-            this.lbNumero.AutoSize = true;
-            this.lbNumero.Location = new System.Drawing.Point(222, 25);
-            this.lbNumero.Name = "lbNumero";
-            this.lbNumero.Size = new System.Drawing.Size(27, 16);
-            this.lbNumero.TabIndex = 10;
-            this.lbNumero.Text = "NN";
-            // 
-            // lbcobro
-            // 
-            this.lbcobro.AutoSize = true;
-            this.lbcobro.Location = new System.Drawing.Point(37, 217);
-            this.lbcobro.Name = "lbcobro";
-            this.lbcobro.Size = new System.Drawing.Size(44, 16);
-            this.lbcobro.TabIndex = 11;
-            this.lbcobro.Text = "Cobro";
-            // 
-            // lbcobroResultado
-            // 
-            this.lbcobroResultado.AutoSize = true;
-            this.lbcobroResultado.Location = new System.Drawing.Point(143, 217);
-            this.lbcobroResultado.Name = "lbcobroResultado";
-            this.lbcobroResultado.Size = new System.Drawing.Size(27, 16);
-            this.lbcobroResultado.TabIndex = 12;
-            this.lbcobroResultado.Text = "NN";
+            this.txtsalarioMinimo.Location = new System.Drawing.Point(146, 198);
+            this.txtsalarioMinimo.Name = "txtsalarioMinimo";
+            this.txtsalarioMinimo.Size = new System.Drawing.Size(166, 22);
+            this.txtsalarioMinimo.TabIndex = 14;
+            this.txtsalarioMinimo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtsalarioMinimo_KeyPress);
             // 
             // REGISTRAR
             // 
@@ -225,7 +250,7 @@
         private System.Windows.Forms.Label lbvalorDeclarado;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label lbFecha;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lbNombre;
         private System.Windows.Forms.Label lbNit;
         private System.Windows.Forms.TextBox txtNit;
@@ -234,5 +259,7 @@
         private System.Windows.Forms.Label lbnumeroFormulario;
         private System.Windows.Forms.Label lbcobroResultado;
         private System.Windows.Forms.Label lbcobro;
+        private System.Windows.Forms.TextBox txtsalarioMinimo;
+        private System.Windows.Forms.Label label1;
     }
 }
