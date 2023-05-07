@@ -71,7 +71,8 @@ namespace Plantilla_examen
                 lbcobroResultado.Text=formulario.Cobro.ToString();
                 servidiosFormulario.Add(formulario);
                 MessageBox.Show("Se Guardo Correctamente");
-                
+                MessageBox.Show("Se Guardo Correctamente");
+
             }
         }
         private void btnGuardar_Click(object sender, EventArgs e)
