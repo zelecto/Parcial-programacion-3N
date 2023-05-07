@@ -48,13 +48,13 @@ namespace Plantilla_examen
         void cargarGrillaEmplazamiento() 
         {
             dtviewvisualizarEmplazamiento.DataSource = servidiosFormulario.GetListaEmplazamiento();
-            dtviewvisualizarEmplazamiento.DataSource = servidiosFormulario.CobroAllEmplazamiento();
+            
         }
 
         void cargarGrillasinEmplazamiento()
         {
             dtviewsinEmplazamiento.DataSource = servidiosFormulario.GetListaSinEmplazamiento();   
-            dtviewsinEmplazamiento.DataSource = servidiosFormulario.CobroAllSinEmplazamiento();
+            
         }
 
         private void VisualizarEmplezamientoySinEmplezamiento_Load(object sender, EventArgs e)

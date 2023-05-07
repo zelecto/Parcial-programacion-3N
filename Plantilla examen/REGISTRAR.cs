@@ -20,7 +20,6 @@ namespace Plantilla_examen
         public REGISTRAR()
         {
             InitializeComponent();
-            dtfechaDeclaracion.Enabled = false;
             lbNumero.Text = servidiosFormulario.GenerarId().ToString();   
         }
         ServidiosFormulario servidiosFormulario = new ServidiosFormulario();
